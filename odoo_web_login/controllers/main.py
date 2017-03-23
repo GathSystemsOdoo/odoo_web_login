@@ -46,6 +46,7 @@ class Home(Home):
         request.params['disable_database_manager'] = ast.literal_eval(param_obj.get_param(cr, uid, 'login_form_disable_database_manager')) or False
 
         change_background = ast.literal_eval(param_obj.get_param(cr, uid, 'login_form_change_background_by_hour')) or False
+        static_background = ast.literal_eval(param_obj.get_param(cr, uid, 'login_form_set_static_background_color')) or True
         if change_background:
             config_login_timezone = param_obj.get_param(cr, uid, 'login_form_change_background_timezone')
             tz = config_login_timezone and pytz.timezone(config_login_timezone) or pytz.utc
@@ -59,6 +60,8 @@ class Home(Home):
                 request.params['background_src'] = param_obj.get_param(cr, uid, 'login_form_background_day') or ''
             else: # Dusk
                 request.params['background_src'] = param_obj.get_param(cr, uid, 'login_form_background_dusk') or ''
+        elif static_background:
+            request.params['background_color'] = param_obj.get_param(cr, uid, 'login_form_static_background_color') or '#EFEFEF'                
         else:
             request.params['background_src'] = param_obj.get_param(cr, uid, 'login_form_background_default') or ''
         return super(Home, self).web_login(redirect, **kw)

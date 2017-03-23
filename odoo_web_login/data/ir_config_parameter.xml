@@ -6,6 +6,16 @@
             <field name="value">False</field>
         </record>
         
+        <record id="login_form_set_static_background_color" model="ir.config_parameter">
+            <field name="key">login_form_set_static_background_color</field>
+            <field name="value">True</field>
+        </record>		
+
+        <record id="login_form_static_background_color" model="ir.config_parameter">
+            <field name="key">login_form_static_background_color</field>
+            <field name="value">#EFEFEF</field>
+        </record>			
+		
         <record id="login_form_disable_database_manager" model="ir.config_parameter">
             <field name="key">login_form_disable_database_manager</field>
             <field name="value">False</field>
@@ -13,7 +23,7 @@
         
         <record id="login_form_change_background_by_hour" model="ir.config_parameter">
             <field name="key">login_form_change_background_by_hour</field>
-            <field name="value">True</field>
+            <field name="value">False</field>
         </record>
         
         <record id="login_form_change_background_timezone" model="ir.config_parameter">

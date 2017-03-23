@@ -11,7 +11,7 @@
     		</xpath>
     		
     		<xpath expr="//div[@class='oe_single_form_container modal-content']" position="before">
-    			<div id="background-wrapper" t-attf-style="background-image: url('#{background_src}');"></div>
+    			<div id="background-wrapper" t-attf-style="background-image: url('#{background_src}');background-color: #{background_color};"></div>
     		</xpath>
     		
     		<xpath expr="//div[@class='oe_single_form_container modal-content']" position="attributes">
